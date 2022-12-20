@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)http://pixelartmaker.com/ -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pixel Art Maker</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="./Pixel Art Maker_files/normalize.css">
+        <link rel="stylesheet" href="./Pixel Art Maker_files/main.css">
+		<link rel="stylesheet" href="./Pixel Art Maker_files/editor.css">
+        <script async="" src="./Pixel Art Maker_files/analytics.js.téléchargement"></script><script src="./Pixel Art Maker_files/modernizr-2.6.2.min.js.téléchargement"></script>
+        <script data-ad-client="ca-pub-3263838347296949" async="" src="./Pixel Art Maker_files/f.txt"></script>
+    </head>
+    <body style="">
+
+	<script>
+
+	function isTouchDevice() {
+		return (('ontouchstart' in window) ||
+			(navigator.maxTouchPoints > 0) ||
+			(navigator.msMaxTouchPoints > 0));
+	}
+	function deviceHasMouse() {
+		if(matchMedia('(pointer:fine)').matches) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	// fix overscroll and other stuff for mobiles
+	if(isTouchDevice() && !deviceHasMouse()) {
+	  document.body.style.cssText = "overscroll-behavior: none; overflow: hidden; height: 100%; position: fixed; margin: 0; padding: 0; border: 0; outline: 0;";
+	  document.scrollingElement.style.cssText = "overscroll-behavior:none; overflow:hidden;";
+	}
+
+	// For some reason I can't read scroll position on mobile :(
+	// let documentBodyTopLeft = {top:0, left:0};
+	// window.addEventListener('touchstart', function (e) {
+	// 	if(e.touches.length == 1) {
+	// 		document.body.style.cssText = "overscroll-behavior: none; margin: 0; padding: 0; border: 0; outline: 0;";
+	// 	}
+	// });
+	// window.addEventListener('touchmove', function (e) {
+	// 	documentBodyTopLeft = {top:window.scrollY, left:window.scrollX}; // <-- ######### this is the part that doesn't work! also tried document.scrollingElement and document.body, and other stuff
+	// });
+	// window.addEventListener('touchend', function (e) {
+	// 	debugger;
+	// 	document.body.style.cssText = `overscroll-behavior: none; overflow: hidden; height: 100%; position: fixed; top:${documentBodyTopLeft.top}px; left:${documentBodyTopLeft.left}px; margin: 0; padding: 0; border: 0; outline: 0;`;
+	// });
+	</script>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+		<!--=====================================
+		                   INTRO
+		======================================-->
+    <div style="position:relative; left:-5000px; width:500px; overflow:hidden;">
+			<div class="page-title">
+				<img class="logo" src="./Pixel Art Maker_files/main-logo.png" alt="Pixel Art Maker">
+			</div>
+			<div style="width:700px; margin: 0 auto; text-align:center;">
+				<h1>Pixel Art Maker</h1>
+				<p>This is a simple online pixel art editor to help you make pixel art easily. <strong>Pixel Art Maker</strong> (PAM) is designed for beginners, and pros who just want to whip something up and share it with friends. If you like making pixel art, and need an online drawing app like this, then hopefully it lives up to your expectations.</p>
+				<p>If you’re a pixel art creator and would like to have a bit more control over your drawings, then you might find tools like Photoshop useful as an alternative to this online pixel art program.</p>
+				<h2>Make Pixel Art Online: No downloads!</h2>
+				<p>You’ve probably stumbled across this online app in your quest to find a freeware pixel editor which lets you easily draw pixel art for free. This pixel art maker lets you do exactly that. You can get straight to work drawing your favourite characters like mario, goku, batman and sonic.</p>
+				<p>There are a few other pixel art programs on the internet, but they mostly use Flash rather than JavaScript. This tool uses HTML5 and JavaScript so that you get a smooth experience, and don’t need plugins. In any case, it’s worth doing a Google search to check out the other pixel art tools since they might suit your needs better.</p>
+				<p>There are benefits and disavantages of making pixel art on a website. The primary benefit is that it’s really easy to get started since there’s no need to download software onto your computer. Instead, you visit this website and can instantly start drawing pixels. There are some disadvantages to drawing pixel art online, though. For example, you need to have an internet connection, and also, websites are inherently slower than software which runs on your computer. That said, the convenience of being able to create pixel are in your browser may just make it worthwhile, at least for sketching and having fun.</p>
+				<h2>Pixel Art Editor: Create and use templates!</h2>
+				<p>As well as being able to create pixel art from scratch, you can also edit pixel are that others have created. You can create a pixel art template which others can use to create characters and avatars easily. To do this, you simply need to start drawing your pixel art, and when you’re finished, click the save button, give your art a name and description, and then click the submit button. This will give you a link which other people can use to edit your pixel art.</p>
+				<h2>Pixel Art History</h2>
+				<p><a href="https://en.wikipedia.org/wiki/Pixel_art">Pixel art</a>, as it is known today, goes back at least as far as 1972 when Richard Shoup wrote SuperPaint and with the Xerox PARC software. However, the concept of pixel art may go back thousands of years with traditional art forms such as cross-stitching (or more generally, <a href="https://en.wikipedia.org/wiki/Counted-thread_embroidery">counted-thread embroidery</a>) which uses small units which can be filled with thread to create a pattern or “drawing” of sorts. The painting style known as "<a href="https://en.wikipedia.org/wiki/Pointillism">pointillism</a>" is also very similar to pixel art.</p>
+				<p>Pixel images were originally the only type of image which could be displayed on computers due to resolution constraints. Their colour values were also restricted to a small subset of the colours used on computers today. After black and white came 8-bit colour, leading to the distinctive 8-bit pixel art that we know today. Due to these constraints, all early <a href="https://en.wikipedia.org/wiki/Video_games">computer games</a> had to use pixel art for their visual elements. Of course, as screen resolution increased and computing power became better, the pixellated quality of game art assets became less visible.</p>
+				<p>Presently, there are still many games which employ a pixel art style. These are usually indie games, or games where a pixel art style makes the game more visually appealing. People who draw and paint pixel art are (predictably) called <a href="https://en.wikipedia.org/wiki/Pixel_artist">pixel artists</a>.</p>
+				<p>Professional pixel artists generally use expensive software like Adobe Photoshop to create their art and sprites, but of course, this is not necessary for a beginner. Online pixel art apps like this one allow you to create pixel art on a simple grid and instantly share it with friends.</p>
+				<h2>Pixel Art Creators</h2>
+				<p>This app is built for beginners who want to learn to create pixel art, but don’t know where to start. I hope the controls are intuitive and simple, and I hope that it helps you create images which you can be proud of. So, what are you waiting for? Start creating pixel art online now, and share your pixel pictures with your friends.</p>
+			</div>
+		</div>
+
+
+		<!--=====================================
+		                   CANVAS
+		======================================-->
+		<canvas class="main" width="4000" height="4000"></canvas>
+		<canvas class="grid" width="4000" height="4000"></canvas>
+		<canvas class="tools" width="4000" height="4000"></canvas>
+
+		<!-- Helpers -->
+		<canvas class="save" style="display:none;" width="4000" height="4000"></canvas>
+
+		<!--=====================================
+		                   MENU
+		======================================-->
+		<div class="menu-bar-outer">
+			<div class="menu-bar">
+				<div class="item menu-toggle-button" title="Hide menu" onclick="editor.toggleMenu();"><img class="icon" src="./Pixel Art Maker_files/up-arrow-icon-white.png" alt=""></div>
+				<div class="item marquee-button" title="Marquee/Select tool" onclick="editor.changeTool(&#39;marquee&#39;);"><img class="icon" src="./Pixel Art Maker_files/marquee-icon-white.png" alt=""><div class="tint"></div></div>
+				<div class="item pen-button" title="Pen tool (P)" onclick="editor.changeTool(&#39;pen&#39;);"><img class="icon" src="./Pixel Art Maker_files/pen-icon-white.png" alt=""><div class="tint" style="display:block;"></div></div>
+				<div class="item line-button" title="Straight line tool (L)" onclick="editor.changeTool(&#39;line&#39;);"><img class="icon" src="./Pixel Art Maker_files/line-icon-white.png" alt=""><div class="tint"></div></div>
+				<div class="item bucket-button" title="Fill tool (F)" onclick="editor.changeTool(&#39;bucket&#39;);"><img class="icon" src="./Pixel Art Maker_files/bucket-icon-white.png" alt=""><div class="tint"></div></div>
+				<div class="item eraser-button" title="Eraser (E)" onclick="editor.changeTool(&#39;eraser&#39;);"><img class="icon" src="./Pixel Art Maker_files/eraser-icon-white.png" alt=""><div class="tint"></div></div>
+				<div class="item palette-button" title="Change colour">
+					<input id="color-picker" class="color" value="1EC7FA" spellcheck="false" autocomplete="off" style="background-image: none; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
+					<!-- <input id="color-picker" value="#1EC7FA" style="background-color: rgb(51 51 51);box-sizing: border-box;padding: 0;" type="color">	 -->
+					<!--<img class="icon" src="img/icons/palette-icon-white.png" alt=""/>-->
+				</div>
+				<div class="item eyedropper-button" title="Sample colour (S)" onclick="editor.changeTool(&#39;eyedropper&#39;);"><img class="icon" src="./Pixel Art Maker_files/eyedropper-icon-white.png" alt=""><div class="tint"></div></div>
+				<div class="item save-button" title="Save as PNG"><img class="icon" src="./Pixel Art Maker_files/save-icon-white.png" alt=""><div class="tint"></div></div>
+				<div class="item grid-button" title="Toggle grid"><img class="icon" src="./Pixel Art Maker_files/grid-icon-white.png" alt=""></div>
+				<div class="item clearcanvas-button" title="Clear the canvas"><img class="icon" src="./Pixel Art Maker_files/cleancanvas-icon-white.png" alt=""></div>
+				<div class="item undo-button" title="Undo last action (CTRL + Z)"><img class="icon" src="./Pixel Art Maker_files/undo-icon-white.png" alt=""></div>
+				<!--<div class="item transparency-button" title="Toggle transparent background"><img class="icon" src="img/icons/transparency-icon-white.png" alt=""/></div>
+				-->
+				<!--<div class="item transparency-button" title="Transparent background" onclick="editor.transparentBG();"><img class="icon" src="img/icons/transparency-icon-white.png" alt=""/></div>
+				-->
+			</div>
+		</div>
+
+
+
+
+		<!--=====================================
+		                   OTHER
+		======================================-->
+		<div class="save-window">
+			<div class="save-window-wrap">
+				<img id="save-art-close-button" class="hover-opacity-change" src="./Pixel Art Maker_files/close-cross.png" alt="">
+
+				<p class="title">Save Your Pixels!</p>
+				<div class="center details">
+					<label>Title:<br><input style="box-sizing: border-box;" class="full-width" type="text" id="save-art-title" value=""></label><br>
+					<label>Description:<br><textarea style="box-sizing: border-box;" class="full-width" id="save-art-desc" placeholder="What&#39;s this piece for? What&#39;s it about? Feel free to include links."></textarea></label><br>
+					<div style="padding:0.5rem;background: #ececec;border-radius: 3px;">
+					  <div><label class="pixel-size">Size of each pixel: <input id="custom-pixel-size" type="text" value="10"> <span>px</span></label></div>
+					  <div style="margin: 0.5rem 0;"><label><input style="display:inline-block;" id="save-art-private" type="checkbox" name="is_private" value="0"><span style="margin-left: 6px; position:relative; top: -1px; font-weight: normal;">Private (will not be listed in the gallery)</span></label></div>
+                      <div>Gallery Channel: <input value="" placeholder="(optional)" id="save-art-gallery-channel-name" style="width: 115px;"> <a id="gallery-channel-link" href="http://pixelartmaker.com/gallery" target="_blank">show channel</a></div>
+											<div style="font-size: 65%;opacity: 0.6;">Note: You can password-lock channels that have 2 or more separate words.</div>
+                      <script>
+											  if(localStorage.lastGalleryChannelUsed) {
+													document.querySelector("#save-art-gallery-channel-name").value = localStorage.lastGalleryChannelUsed;
+													document.querySelector("#gallery-channel-link").href = "/gallery/"+document.querySelector("#save-art-gallery-channel-name").value.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9\-]/g, "");
+												}
+                        document.querySelector("#save-art-gallery-channel-name").addEventListener("input", function() {
+                          document.querySelector("#gallery-channel-link").href = "/gallery/"+this.value.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9\-]/g, "");
+													localStorage.lastGalleryChannelUsed = this.value.toLowerCase();
+                        });
+
+												document.querySelector("#save-art-gallery-channel-name").addEventListener("input", (e) => {
+													let caretPos = e.target.selectionStart;
+													let text = e.target.value;
+													if(text === "") { return; }
+													let output = "";
+													for(let c of text) {
+														if(/[A-Z]/.test(c)) {
+															output += c.toLowerCase();
+														} else if(/[ \-]/.test(c)) {
+															if(output[output.length] !== "-") output += "-";
+														} else if(/[0-9a-z]/.test(c)) {
+															output += c;
+														} else {
+															if(output[output.length] !== "-") output += "-";
+														}
+													}
+													e.target.value = output.replace(/-+/g, "-");
+													setCaretPosition(e.target, caretPos);
+												});
+												function setCaretPosition(elem, caretPos) {
+													var range;
+													if(elem.createTextRange) {
+														range = elem.createTextRange();
+														range.move('character', caretPos);
+														range.select();
+													} else {
+														elem.focus();
+														if (elem.selectionStart !== undefined) {
+																elem.setSelectionRange(caretPos, caretPos);
+														}
+													}
+												}
+                      </script>
+                    </div>
+					<button id="save-art-submit-button">Save</button>
+				</div>
+				<p class="loader" style="display:none; text-align:center; margin-top:50px; font-weight:bold;">Saving in progress...</p>
+				<div class="saved-output" style="display:none; text-align:center; margin-top:100px;">
+					<b>Here's the link to your saved art:</b><br>
+					<a class="save-link" href="http://pixelartmaker.com/#" target="_blank">Error: Link not loaded</a><p></p>
+					<br>
+					<a id="data-url-save-link" href="http://pixelartmaker.com/" download="PixelArt">download PNG</a>
+				</div>
+				<!--<div class="center output">
+					<img id="saved-image-output" src="" alt="Your Pixel Art!" /><br/>
+					<a id="download-image-link" href="" download="MyPixelArt">download PNG</a><br/>
+					<a id="download-pixel-array" href="" download="MyPixelArt">download PAM file (for future editing)</a><br/>
+					<a id="share-reddit-link" target="_blank" href="http://www.reddit.com/r/pixelart/submit?url=http%3A%2F%2Fpixelartmaker.com%2Fart%2FLOADING%2F&title=My%20Pixel%20Art%20:)">share your art on the /r/pixelart subreddit</a><br/>
+					<a id="direct-image-url" target="_blank" href="http://pixelartmaker.com/art/LOADING...">go to image url</a>
+				</div>-->
+
+			</div>
+			<div class="save-art-window-shadow"></div>
+		</div>
+		<style>
+			.save-window .pixel-size input {
+				display: inline-block;
+				width: 45px;
+				margin: 0;
+				height: 19px;
+				font-size: 18px;
+				text-align: center;
+				margin-bottom: 10px;
+			}
+			.save-window .pixel-size span {
+				font-size: 14px;
+				line-height: 16px;
+			}
+			.save-window .output {
+				text-align:center;
+			}
+			.save-window .output img {
+				max-width:400px;
+				max-height:200px;
+				display:block;
+				margin:0 auto;
+			}
+			.save-window .details {
+
+			}
+			.save-window {
+				display:none;
+				z-index: 20000;
+				position: fixed;
+				top:0; left:0;
+				width:100%;
+				height:100%;
+			}
+
+			.save-window-wrap .title {
+				margin:0px;
+				/*margin-bottom: 40px;*/
+				text-align:center;
+				font-weight:bold;
+				font-family: 'Merriweather', serif;
+				font-size: 22px;
+			}
+
+			.save-window-wrap .center {
+				width: 400px;
+				max-width: 100%;
+				margin: 0 auto;
+			}
+
+			#save-art-close-button {
+				position:absolute;
+				right:10px; top:10px;
+				cursor:pointer;
+			}
+
+			.save-window-wrap {
+				padding: 10px;
+			}
+
+			.save-window-wrap label {
+				vertical-align:top;
+				font-family: 'Open Sans', sans-serif;
+				font-size: 17px;
+
+			}
+
+			.save-window-wrap textarea, .save-window-wrap input.full-width {
+				width: 100%;
+				font-size: 22px;
+				font-family: 'Merriweather', serif;
+				margin-bottom: 10px;
+				border: 1px solid #bbbbbb;
+			}
+			 .save-window-wrap input[type='checkbox'] {
+
+			}
+
+			.save-window-wrap textarea {
+				height: 80px;
+				font-family: 'Merriweather', serif;
+				margin-bottom:10px;
+			}
+
+			.save-window-wrap label {
+				/* font-weight: bold; */
+			}
+
+			#save-art-submit-button {
+				display:block;
+				margin: 10px auto 0 auto;
+			}
+
+			.save-art-window-shadow {
+				opacity: 0.2;
+				background: #000000;
+				z-index:90;
+				width:100%;
+				height:100%;
+				position:absolute;
+				top:0; left:0;
+			}
+
+			.save-window-wrap {
+				z-index:100;
+				background: #ffffff;
+				width: 435px;
+				max-width: 95%;
+                box-sizing: border-box;
+                height: max-content;
+				overflow: auto;
+				margin: auto;
+				position: absolute;
+				top: 0; left: 0; bottom: 0; right: 0;
+				border-radius: 2px;
+				box-shadow: 0px 2px 10px #888888;
+			}
+		</style>
+
+
+		<div style="position:absolute; bottom:5px; right: 5px; display:inline-block; width:auto;z-index: 3005; display:none;">
+			<!-- <button>close</button> -->
+			<p style="margin:0;font-size:15px;font-weight:bold;background:#ffffff;"><a style="text-decoration:none;" href="http://pixelartmaker.com/gallery" target="_blank">Visit the gallery</a></p>
+		</div>
+
+		<div style="display:none;">
+			<img class="icon" src="./Pixel Art Maker_files/up-arrow-icon-white.png" alt="">
+			<img class="icon" src="./Pixel Art Maker_files/pam-icon-white.png" alt="">
+		</div>
+
+		<script>if(!localStorage.theyHaveSeenDragAndDropTip) dragAndDropTipEl.style.display = "flex";</script>
+
+		<script>
+			//this gets read by the editor object and put in this.loading_offshoot
+			var loading_offshoot = false;		</script>
+
+		<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+		<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.2.min.js"><\/script>')</script><script src="./Pixel Art Maker_files/jquery-1.10.2.min.js.téléchargement"></script>
+		<script type="text/javascript" src="./Pixel Art Maker_files/jscolor.js.téléchargement"></script>  <!-- I edited line 697 of jscolor.js so the picker "follows" the screen when they scroll around -->
+		<script src="./Pixel Art Maker_files/plugins.js.téléchargement"></script>
+		<script src="./Pixel Art Maker_files/lz-string-1.3.3-min.js.téléchargement"></script>
+		<script src="./Pixel Art Maker_files/main.js.téléchargement"></script>
+		<script async="" src="./Pixel Art Maker_files/dragAndDropPixelArt.js.téléchargement"></script>
+		<script src="./Pixel Art Maker_files/localForage.min.js.téléchargement"></script>
+		<script src="./Pixel Art Maker_files/editor.js.téléchargement"></script>
+
+		<script>
+			var parent_unique_name = '';
+			if(editor.loading_offshoot && !confirm("WARNING: You are about to start an offshoot, but this will override all the pixels that were previously on your canvas. Please click CANCEL to load your previous pixels so that you can save them, or if you have already saved them (or you don't care about them), then click 'Okay' to proceed with creating your offshoot.")) {
+				editor.loadFromLocalStorage();
+			} else {
+				//offshoot code appears here when they are loading offshoot
+							}
+
+		</script>
+		<script>
+			// since art could be off screen (e.g. in the middle of the canvas), we scroll to it:
+			history.scrollRestoration = 'manual';
+			window.scrollTo(0, 0);
+			setTimeout(() => {
+				let earliestXPaint = Infinity;
+				let earliestYPaint = Infinity;
+				for(let i = 0; i < editor.pixelArray.length; i++) {
+					for(let j = 0; j < editor.pixelArray[i].length; j++) {
+						let v = editor.pixelArray[i][j];
+						if(v !== "0") {
+							if(i < earliestXPaint) earliestXPaint = i;
+							if(j < earliestYPaint) earliestYPaint = j;
+						}
+					}
+				}
+				document.scrollingElement.scrollLeft = (earliestXPaint-20) * editor.pixelSize;
+				document.scrollingElement.scrollTop = (earliestYPaint-20) * editor.pixelSize;
+			}, 10);
+		</script>
+
+
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-36798824-8', 'pixelartmaker.com');
+		  ga('send', 'pageview');
+
+		</script>
+
+
+    
+
+<script>(async () => {
+    class Wanteeed extends HTMLElement {
+      constructor() {
+        super();
+
+        this.attachShadow({ mode: 'open' });
+      }
+    }
+
+    window.customElements.define('wtd-root', Wanteeed);
+    window.customElements.whenDefined('wtd-root');
+  })();</script><wtd-div id="wanteeedContainer" style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 2147483647;
+          "><iframe id="wanteeedPanel" data-version="1.29.0" allowtransparency="true" style="display: none; border: none; background-color: rgb(255, 255, 255); position: relative; z-index: 2147483647; clip: auto; border-radius: 3px; box-shadow: rgb(181, 181, 181) 1px 1px 3px 2px; margin-left: auto; margin-right: 12px; margin-top: 12px; height: 1px; width: 1px;" src="./Pixel Art Maker_files/saved_resource.html"></iframe></wtd-div><iframe id="wanteeedTestMaker" data-version="1.29.0" allowtransparency="true" style="transition: all 0.2s ease-out 0s; position: fixed; display: none; top: 10px; left: 0px; overflow: hidden; z-index: 45739864; clip: auto; border: none; height: 1px; width: 1px;" src="./Pixel Art Maker_files/saved_resource(1).html"></iframe></body></html>
